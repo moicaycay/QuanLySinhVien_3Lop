@@ -1,0 +1,14 @@
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\QuanLySinhVien_3Lop.exe.config
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\QuanLySinhVien_3Lop.exe
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\QuanLySinhVien_3Lop.pdb
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\BussinessLogicLayer.dll
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\DataAccessLayer.dll
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\BussinessLogicLayer.pdb
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\DataAccessLayer.pdb
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\obj\Debug\QuanLySinhVien_3Lop.Form1.resources
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\obj\Debug\QuanLySinhVien_3Lop.Properties.Resources.resources
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\obj\Debug\PresentationLayer.csproj.GenerateResource.Cache
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\obj\Debug\PresentationLayer.csproj.CoreCompileInputs.cache
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\obj\Debug\QuanLySinhVien_3Lop.exe
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\obj\Debug\QuanLySinhVien_3Lop.pdb

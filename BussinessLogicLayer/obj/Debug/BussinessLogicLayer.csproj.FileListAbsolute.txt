@@ -1,0 +1,8 @@
+F:\Documents\GitHub\QuanLySinhVien_3Lop\BussinessLogicLayer\bin\Debug\BussinessLogicLayer.dll
+F:\Documents\GitHub\QuanLySinhVien_3Lop\BussinessLogicLayer\bin\Debug\BussinessLogicLayer.pdb
+F:\Documents\GitHub\QuanLySinhVien_3Lop\BussinessLogicLayer\bin\Debug\DataAccessLayer.dll
+F:\Documents\GitHub\QuanLySinhVien_3Lop\BussinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+F:\Documents\GitHub\QuanLySinhVien_3Lop\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csprojResolveAssemblyReference.cache
+F:\Documents\GitHub\QuanLySinhVien_3Lop\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csproj.CoreCompileInputs.cache
+F:\Documents\GitHub\QuanLySinhVien_3Lop\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.dll
+F:\Documents\GitHub\QuanLySinhVien_3Lop\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.pdb

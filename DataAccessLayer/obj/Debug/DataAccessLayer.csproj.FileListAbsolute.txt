@@ -1,0 +1,6 @@
+F:\Documents\GitHub\QuanLySinhVien_3Lop\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+F:\Documents\GitHub\QuanLySinhVien_3Lop\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+F:\Documents\GitHub\QuanLySinhVien_3Lop\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+F:\Documents\GitHub\QuanLySinhVien_3Lop\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+F:\Documents\GitHub\QuanLySinhVien_3Lop\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+F:\Documents\GitHub\QuanLySinhVien_3Lop\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
