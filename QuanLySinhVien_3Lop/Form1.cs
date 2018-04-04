@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLogicLayer;
+using System.IO;
 
 namespace QuanLySinhVien_3Lop
 {
@@ -15,6 +16,7 @@ namespace QuanLySinhVien_3Lop
     {
         Khoa_BLL khoabll = new Khoa_BLL();
         Lop_BLL lopbll = new Lop_BLL();
+        SinhVien_BLL svbll = new SinhVien_BLL();
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +31,9 @@ namespace QuanLySinhVien_3Lop
             cboKhoa3.DataSource = khoabll.Khoa_Select();
             cboKhoa3.DisplayMember = "TenKhoa";
             cboKhoa3.ValueMember = "MaKhoa";
+            btnSave3.Enabled = false;
+            btnSave2.Enabled = false;
+            btnSave1.Enabled = false;
         }
 
         private void DtgKhoa_SelectionChanged(object sender, EventArgs e)
@@ -51,7 +56,12 @@ namespace QuanLySinhVien_3Lop
             {
                 try
                 {
-                    khoabll.Khoa_Insert(tbMaKhoa.Text.ToString(), tbTenKhoa.Text.ToString(), tbSDT.Text.ToString());
+                    string[] s;
+                    s = tbTenKhoa.Text.ToString().Split(' ');
+                    string c = null;
+                    for (int i = 0; i < s.Length; i++)
+                        c = c + s[i].Substring(0, 1);
+                    khoabll.Khoa_Insert(c.ToUpper(), tbTenKhoa.Text.ToString(), tbSDT.Text.ToString());
                     dtgKhoa.DataSource = dtgKhoa.DataSource = khoabll.Khoa_Select();
                     cboKhoa2.DataSource = khoabll.Khoa_Select() ;
                     cboKhoa2.DisplayMember = "TenKhoa";
@@ -127,9 +137,9 @@ namespace QuanLySinhVien_3Lop
 
         private void CboKhoa3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboKhoa3.DataSource = lopbll.Lop_Select(cboKhoa3.SelectedValue.ToString());
-            cboKhoa3.DisplayMember = "TenKhoa";
-            cboKhoa3.ValueMember = "MaKhoa";
+            cboLop1.DataSource = lopbll.Lop_Select(cboKhoa3.SelectedValue.ToString());
+            cboLop1.DisplayMember = "TenLop";
+            cboLop1.ValueMember = "MaLop";
         }
 
         private void BtnSave2_Click(object sender, EventArgs e)
@@ -199,7 +209,7 @@ namespace QuanLySinhVien_3Lop
         private void BtnTaoMoi1_Click(object sender, EventArgs e)
         {
             tbMaKhoa.Clear();
-            tbMaKhoa.Focus();
+            tbTenKhoa.Focus();
             tbTenKhoa.Clear();
             tbSDT.Clear();
         }
@@ -232,5 +242,139 @@ namespace QuanLySinhVien_3Lop
         {
             btnSave2.Enabled = true;
         }
+
+        private void cboLop1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dtgSinhVien.DataSource = svbll.SinhVien_Select(cboLop1.SelectedValue.ToString());
+        }
+
+        private void btnSave3_Click(object sender, EventArgs e)
+        {
+            DialogResult key = MessageBox.Show("Bạn có muốn lưu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (key == DialogResult.Yes)
+            {
+                try
+                {
+                    StreamReader sr = new StreamReader("data.txt");
+                    string maSV = sr.ReadLine();
+                    sr.Close();
+                    int maSV1 = 1 + int.Parse(maSV);
+                    StreamWriter sw = new StreamWriter("data.txt");
+                    sw.Write(maSV1);
+                    sw.Close();
+                    svbll.SinhVien_Insert(maSV1.ToString(), cboLop1.SelectedValue.ToString(), tbHoTen3.Text.ToString(), (radioButton1.Checked == true ? "True" : "False"), dateTimePicker1.Value.ToString("yyyy/MM/dd"), tbSDT3.Text.ToString());
+                    dtgSinhVien.DataSource = svbll.SinhVien_Select(cboLop1.SelectedValue.ToString());
+                }
+
+                catch (Exception LOI)
+                {
+                    MessageBox.Show(LOI.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        private void btnCapNhap3_Click(object sender, EventArgs e)
+        {
+            DialogResult key = MessageBox.Show("Bạn có muốn cập nhật không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (key == DialogResult.Yes)
+            {
+                try
+                {
+                    svbll.SinhVien_Update(dtgSinhVien[0, dtgSinhVien.CurrentRow.Index].Value.ToString(), cboLop1.SelectedValue.ToString(), tbHoTen3.Text.ToString(), (radioButton1.Checked == true ? "True" : "False"), dateTimePicker1.Value.ToString("yyyy/MM/dd"), tbSDT3.Text.ToString());
+                    dtgSinhVien.DataSource = svbll.SinhVien_Select(cboLop1.SelectedValue.ToString());
+                }
+
+                catch (Exception LOI)
+                {
+                    MessageBox.Show(LOI.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        private void dtgSinhVien_SelectionChanged(object sender, EventArgs e)
+        {
+            dateTimePicker1.Text = dtgSinhVien[4, dtgSinhVien.CurrentRow.Index].Value.ToString();
+            tbHoTen3.Text = dtgSinhVien[2, dtgSinhVien.CurrentRow.Index].Value.ToString();
+            tbSDT3.Text = dtgSinhVien[5, dtgSinhVien.CurrentRow.Index].Value.ToString();
+            if (String.Compare(dtgSinhVien[3, dtgSinhVien.CurrentRow.Index].Value.ToString(), "True") == 0)
+                radioButton1.Checked = true;
+            else
+                radioButton2.Checked = true;
+        }
+
+        private void btnXoa3_Click(object sender, EventArgs e)
+        {
+            DialogResult key = MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (key == DialogResult.Yes)
+            {
+                try
+                {
+                    svbll.SinhVien_Delete(dtgSinhVien[0, dtgSinhVien.CurrentRow.Index].Value.ToString());
+                    dtgSinhVien.DataSource = svbll.SinhVien_Select(cboLop1.SelectedValue.ToString());
+                }
+
+                catch (Exception LOI)
+                {
+                    MessageBox.Show(LOI.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dtgLop_SelectionChanged(object sender, EventArgs e)
+        {
+            string a = dtgLop[0, dtgLop.CurrentRow.Index].Value.ToString();
+            tbKhoaL2.Text = a.Substring(0, 3);
+            tbLop2.Text = a.Substring(3, 1);
+            tbSiSo2.Text = dtgLop[3, dtgLop.CurrentRow.Index].Value.ToString();
+            string[] s;
+            string b = dtgLop[2, dtgLop.CurrentRow.Index].Value.ToString();
+            s = b.Split(' ');
+            string c = null;
+            for (int i = 1; i < s.Length; i++)
+                c = c + s[i] + " ";
+            c = c.TrimEnd();
+            tbNganh2.Text = c;
+        }
+
+        private void btnExit1_Click(object sender, EventArgs e)
+        {
+            if (btnSave1.Enabled == true)
+            {
+                BtnSave1_Click(sender, e);
+                this.Close();
+            }
+            else
+                this.Close();
+        }
+
+        private void btnExit2_Click(object sender, EventArgs e)
+        {
+            if (btnSave2.Enabled == true)
+            {
+                BtnSave2_Click(sender, e);
+                this.Close();
+            }
+            else
+                this.Close();
+        }
+
+        private void btnExit3_Click(object sender, EventArgs e)
+        {
+            if (btnSave3.Enabled == true)
+            {
+                btnSave3_Click(sender, e);
+                this.Close();
+            }
+            else
+                this.Close();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+           dtgSinhVien.DataSource = svbll.SinhVien_TimKiem(tbHoTen3.Text,cboLop1.SelectedValue.ToString());
+        }
     }
-}
+    }
+

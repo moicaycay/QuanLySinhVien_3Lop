@@ -82,6 +82,7 @@
             this.cboKhoa2 = new System.Windows.Forms.ComboBox();
             this.sINHVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSinhVien)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -95,6 +96,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnTimKiem);
             this.tabPage3.Controls.Add(this.btnXoa3);
             this.tabPage3.Controls.Add(this.btnCapNhap3);
             this.tabPage3.Controls.Add(this.label13);
@@ -130,6 +132,7 @@
             this.btnXoa3.TabIndex = 33;
             this.btnXoa3.Text = "Xóa";
             this.btnXoa3.UseVisualStyleBackColor = true;
+            this.btnXoa3.Click += new System.EventHandler(this.btnXoa3_Click);
             // 
             // btnCapNhap3
             // 
@@ -139,11 +142,12 @@
             this.btnCapNhap3.TabIndex = 32;
             this.btnCapNhap3.Text = "Cập nhập";
             this.btnCapNhap3.UseVisualStyleBackColor = true;
+            this.btnCapNhap3.Click += new System.EventHandler(this.btnCapNhap3_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(193, 57);
+            this.label13.Location = new System.Drawing.Point(196, 90);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 13);
             this.label13.TabIndex = 31;
@@ -152,7 +156,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(299, 54);
+            this.radioButton2.Location = new System.Drawing.Point(302, 87);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(39, 17);
             this.radioButton2.TabIndex = 30;
@@ -163,7 +167,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(246, 55);
+            this.radioButton1.Location = new System.Drawing.Point(249, 88);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(47, 17);
             this.radioButton1.TabIndex = 29;
@@ -174,7 +178,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(404, 52);
+            this.dateTimePicker1.Location = new System.Drawing.Point(407, 85);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(104, 20);
             this.dateTimePicker1.TabIndex = 28;
@@ -191,7 +195,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(344, 56);
+            this.label11.Location = new System.Drawing.Point(347, 89);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 13);
             this.label11.TabIndex = 26;
@@ -214,6 +218,7 @@
             this.btnExit3.TabIndex = 24;
             this.btnExit3.Text = "Thoát";
             this.btnExit3.UseVisualStyleBackColor = true;
+            this.btnExit3.Click += new System.EventHandler(this.btnExit3_Click);
             // 
             // btnSave3
             // 
@@ -223,6 +228,7 @@
             this.btnSave3.TabIndex = 23;
             this.btnSave3.Text = "Lưu";
             this.btnSave3.UseVisualStyleBackColor = true;
+            this.btnSave3.Click += new System.EventHandler(this.btnSave3_Click);
             // 
             // btnNew3
             // 
@@ -276,6 +282,7 @@
             this.dtgSinhVien.Name = "dtgSinhVien";
             this.dtgSinhVien.Size = new System.Drawing.Size(554, 155);
             this.dtgSinhVien.TabIndex = 2;
+            this.dtgSinhVien.SelectionChanged += new System.EventHandler(this.dtgSinhVien_SelectionChanged);
             // 
             // cboLop1
             // 
@@ -284,6 +291,7 @@
             this.cboLop1.Name = "cboLop1";
             this.cboLop1.Size = new System.Drawing.Size(121, 21);
             this.cboLop1.TabIndex = 1;
+            this.cboLop1.SelectedIndexChanged += new System.EventHandler(this.cboLop1_SelectedIndexChanged);
             // 
             // cboKhoa3
             // 
@@ -365,6 +373,7 @@
             this.btnExit2.TabIndex = 15;
             this.btnExit2.Text = "Thoát";
             this.btnExit2.UseVisualStyleBackColor = true;
+            this.btnExit2.Click += new System.EventHandler(this.btnExit2_Click);
             // 
             // btnSave2
             // 
@@ -475,6 +484,7 @@
             this.btnExit1.TabIndex = 6;
             this.btnExit1.Text = "Thoát";
             this.btnExit1.UseVisualStyleBackColor = true;
+            this.btnExit1.Click += new System.EventHandler(this.btnExit1_Click);
             // 
             // btnSave1
             // 
@@ -510,14 +520,15 @@
             this.tbTenKhoa.Name = "tbTenKhoa";
             this.tbTenKhoa.Size = new System.Drawing.Size(181, 20);
             this.tbTenKhoa.TabIndex = 2;
+            this.tbTenKhoa.TextChanged += new System.EventHandler(this.TbMaKhoa_TextChanged);
             // 
             // tbMaKhoa
             // 
             this.tbMaKhoa.Location = new System.Drawing.Point(75, 18);
             this.tbMaKhoa.Name = "tbMaKhoa";
+            this.tbMaKhoa.ReadOnly = true;
             this.tbMaKhoa.Size = new System.Drawing.Size(121, 20);
             this.tbMaKhoa.TabIndex = 1;
-            this.tbMaKhoa.TextChanged += new System.EventHandler(this.TbMaKhoa_TextChanged);
             // 
             // dtgKhoa
             // 
@@ -597,6 +608,7 @@
             this.dtgLop.Name = "dtgLop";
             this.dtgLop.Size = new System.Drawing.Size(554, 183);
             this.dtgLop.TabIndex = 1;
+            this.dtgLop.SelectionChanged += new System.EventHandler(this.dtgLop_SelectionChanged);
             // 
             // cboKhoa2
             // 
@@ -606,6 +618,16 @@
             this.cboKhoa2.Size = new System.Drawing.Size(121, 21);
             this.cboKhoa2.TabIndex = 0;
             this.cboKhoa2.SelectedIndexChanged += new System.EventHandler(this.CboKhoa2_SelectedIndexChanged);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(199, 54);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.TabIndex = 34;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // Form1
             // 
@@ -687,6 +709,7 @@
         private System.Windows.Forms.ComboBox cboKhoa2;
         private System.Windows.Forms.BindingSource sINHVIENBindingSource1;
         private System.Windows.Forms.BindingSource sINHVIENBindingSource;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }
 
