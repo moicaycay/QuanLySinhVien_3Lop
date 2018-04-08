@@ -112,7 +112,7 @@ namespace QuanLySinhVien_3Lop
             {
                 try
                 {
-                    khoabll.Khoa_Delete(dtgSinhVien[0, dtgSinhVien.CurrentRow.Index].Value.ToString());
+                    khoabll.Khoa_Delete(dtgKhoa[0, dtgKhoa.CurrentRow.Index].Value.ToString());
                     dtgKhoa.DataSource = khoabll.Khoa_Select();
                     cboKhoa2.DataSource = khoabll.Khoa_Select();
                     cboKhoa2.DisplayMember = "TenKhoa";
@@ -373,7 +373,23 @@ namespace QuanLySinhVien_3Lop
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-           dtgSinhVien.DataSource = svbll.SinhVien_TimKiem(tbHoTen3.Text,cboLop1.SelectedValue.ToString());
+           dtgSinhVien.DataSource = svbll.SinhVien_TimKiem(tbTKSV.Text.ToString());
+        }
+
+        private void btnTK1_Click(object sender, EventArgs e)
+        {
+           dtgKhoa.DataSource = khoabll.Khoa_TimKiem(tbTKKhoa.Text.ToString());
+        }
+
+        private void btnTK2_Click(object sender, EventArgs e)
+        {
+            dtgLop.DataSource = lopbll.Lop_TimKiem(tbTKLop.Text.ToString());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 dlg2 = new Form2();
+            dlg2.ShowDialog();
         }
     }
     }

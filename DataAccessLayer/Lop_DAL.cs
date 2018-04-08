@@ -49,5 +49,13 @@ namespace DataAccessLayer
             name[1] = "@ma"; value[1] = maSV;
             return thaotac.SQL_Thuchien("de_TuyChon", name, value, 2);
         }
+        public DataTable TimKiem(string text)
+        {
+            //thaotac.KetnoiCSDL();
+            name = new string[1];
+            value = new object[1];
+            name[0] = "@chuoitim"; value[0] = text;
+            return thaotac.SQL_Laydulieu("tk_Lop", name, value, 1);
+        }
     }
 }

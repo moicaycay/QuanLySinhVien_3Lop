@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tbTKSV = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnXoa3 = new System.Windows.Forms.Button();
             this.btnCapNhap3 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -61,6 +63,8 @@
             this.btnNew2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbTKKhoa = new System.Windows.Forms.TextBox();
+            this.btnTK1 = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCapNhap = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -74,6 +78,8 @@
             this.tbMaKhoa = new System.Windows.Forms.TextBox();
             this.dtgKhoa = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tbTKLop = new System.Windows.Forms.TextBox();
+            this.btnTK2 = new System.Windows.Forms.Button();
             this.tbNganh2 = new System.Windows.Forms.TextBox();
             this.tbSiSo2 = new System.Windows.Forms.TextBox();
             this.tbKhoaL2 = new System.Windows.Forms.TextBox();
@@ -82,7 +88,7 @@
             this.cboKhoa2 = new System.Windows.Forms.ComboBox();
             this.sINHVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSinhVien)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -96,6 +102,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.tbTKSV);
             this.tabPage3.Controls.Add(this.btnTimKiem);
             this.tabPage3.Controls.Add(this.btnXoa3);
             this.tabPage3.Controls.Add(this.btnCapNhap3);
@@ -123,6 +130,23 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Sinh Viên";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tbTKSV
+            // 
+            this.tbTKSV.Location = new System.Drawing.Point(299, 52);
+            this.tbTKSV.Name = "tbTKSV";
+            this.tbTKSV.Size = new System.Drawing.Size(121, 20);
+            this.tbTKSV.TabIndex = 35;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(444, 49);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.TabIndex = 34;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnXoa3
             // 
@@ -409,6 +433,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.tbTKKhoa);
+            this.tabPage1.Controls.Add(this.btnTK1);
             this.tabPage1.Controls.Add(this.btnXoa);
             this.tabPage1.Controls.Add(this.btnCapNhap);
             this.tabPage1.Controls.Add(this.label6);
@@ -428,6 +455,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Khoa";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tbTKKhoa
+            // 
+            this.tbTKKhoa.Location = new System.Drawing.Point(316, 18);
+            this.tbTKKhoa.Name = "tbTKKhoa";
+            this.tbTKKhoa.PasswordChar = '*';
+            this.tbTKKhoa.Size = new System.Drawing.Size(121, 20);
+            this.tbTKKhoa.TabIndex = 39;
+            // 
+            // btnTK1
+            // 
+            this.btnTK1.Location = new System.Drawing.Point(443, 15);
+            this.btnTK1.Name = "btnTK1";
+            this.btnTK1.Size = new System.Drawing.Size(75, 23);
+            this.btnTK1.TabIndex = 38;
+            this.btnTK1.Text = "Tìm Kiếm";
+            this.btnTK1.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
@@ -452,7 +496,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 49);
+            this.label6.Location = new System.Drawing.Point(359, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 9;
@@ -461,7 +505,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(278, 21);
+            this.label5.Location = new System.Drawing.Point(16, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 8;
@@ -509,16 +553,16 @@
             // 
             // tbSDT
             // 
-            this.tbSDT.Location = new System.Drawing.Point(75, 46);
+            this.tbSDT.Location = new System.Drawing.Point(397, 55);
             this.tbSDT.Name = "tbSDT";
             this.tbSDT.Size = new System.Drawing.Size(121, 20);
             this.tbSDT.TabIndex = 3;
             // 
             // tbTenKhoa
             // 
-            this.tbTenKhoa.Location = new System.Drawing.Point(337, 18);
+            this.tbTenKhoa.Location = new System.Drawing.Point(75, 55);
             this.tbTenKhoa.Name = "tbTenKhoa";
-            this.tbTenKhoa.Size = new System.Drawing.Size(181, 20);
+            this.tbTenKhoa.Size = new System.Drawing.Size(173, 20);
             this.tbTenKhoa.TabIndex = 2;
             this.tbTenKhoa.TextChanged += new System.EventHandler(this.TbMaKhoa_TextChanged);
             // 
@@ -544,6 +588,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.tbTKLop);
+            this.tabPage2.Controls.Add(this.btnTK2);
             this.tabPage2.Controls.Add(this.btnXoa2);
             this.tabPage2.Controls.Add(this.btnCapNhap2);
             this.tabPage2.Controls.Add(this.tbLop2);
@@ -567,6 +613,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Lớp";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tbTKLop
+            // 
+            this.tbTKLop.Location = new System.Drawing.Point(281, 7);
+            this.tbTKLop.Name = "tbTKLop";
+            this.tbTKLop.Size = new System.Drawing.Size(153, 20);
+            this.tbTKLop.TabIndex = 37;
+            // 
+            // btnTK2
+            // 
+            this.btnTK2.Location = new System.Drawing.Point(440, 6);
+            this.btnTK2.Name = "btnTK2";
+            this.btnTK2.Size = new System.Drawing.Size(75, 23);
+            this.btnTK2.TabIndex = 36;
+            this.btnTK2.Text = "Tìm Kiếm";
+            this.btnTK2.UseVisualStyleBackColor = true;
+            this.btnTK2.Click += new System.EventHandler(this.btnTK2_Click);
             // 
             // tbNganh2
             // 
@@ -619,15 +682,15 @@
             this.cboKhoa2.TabIndex = 0;
             this.cboKhoa2.SelectedIndexChanged += new System.EventHandler(this.CboKhoa2_SelectedIndexChanged);
             // 
-            // btnTimKiem
+            // button1
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(199, 54);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
-            this.btnTimKiem.TabIndex = 34;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.button1.Location = new System.Drawing.Point(281, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Báo Cáo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -710,6 +773,12 @@
         private System.Windows.Forms.BindingSource sINHVIENBindingSource1;
         private System.Windows.Forms.BindingSource sINHVIENBindingSource;
         private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.TextBox tbTKSV;
+        private System.Windows.Forms.TextBox tbTKLop;
+        private System.Windows.Forms.Button btnTK2;
+        private System.Windows.Forms.TextBox tbTKKhoa;
+        private System.Windows.Forms.Button btnTK1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

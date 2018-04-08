@@ -57,17 +57,17 @@ namespace DataAccessLayer
             value = new object[2];
             name[0] = "@Ten"; value[0] = "sinhvien";
             name[1] = "@ma"; value[1] = maSV;
-            return thaotac.SQL_Thuchien("SinhVien_Delete", name, value, 2);
+            return thaotac.SQL_Thuchien("de_TuyChon", name, value, 2);
         }
-        public DataTable sv_TimKiem(string ten, string malop)
+        public DataTable sv_TimKiem(string text)
         {
             //thaotac.KetnoiCSDL();
-            name = new string[2];
-            value = new object[2];
-            name[0] = "@ten"; value[0] = ten;
-            name[1] = "@malop"; value[1] = malop;
+            name = new string[1];
+            value = new object[1];
+            name[0] = "@chuoitim"; value[0] = text;
+            
 
-            return thaotac.SQL_Laydulieu("tk_SinhVien", name, value, 2);
+            return thaotac.SQL_Laydulieu("tk_SinhVien", name, value, 1);
         }
 
 

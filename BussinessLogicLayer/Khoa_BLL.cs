@@ -32,5 +32,9 @@ namespace BussinessLogicLayer
         {
             return khoadal.khoa_delete(makhoa);
         }
+        public DataTable Khoa_TimKiem(string text)
+        {
+            return khoadal.TimKiem(text);
+        }
     }
 }

@@ -20,9 +20,9 @@ namespace BussinessLogicLayer
         {
             return svdal.sv_select(malop);
         }
-        public DataTable SinhVien_TimKiem(string ten,string malop)
+        public DataTable SinhVien_TimKiem(string text)
         {
-            return svdal.sv_TimKiem(ten,malop);
+            return svdal.sv_TimKiem(text);
         }
         //phương thức này gọi phương thức sv_update() ở lớp SinhVien_DAL (tầng DAL)
         public int SinhVien_Update(string MaSV, string MaLop, string hoten, string gioitinh, string ngaysinh, string sdt)

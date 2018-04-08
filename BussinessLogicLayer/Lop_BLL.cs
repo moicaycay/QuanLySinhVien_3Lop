@@ -29,5 +29,9 @@ namespace BussinessLogicLayer
         {
             return lopdal.Lop_delete(malop);
         }
+        public DataTable Lop_TimKiem(string text)
+        {
+            return lopdal.TimKiem(text);
+        }
     }
 }
