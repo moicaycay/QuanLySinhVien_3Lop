@@ -30,8 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tbTKSV = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnXoa3 = new System.Windows.Forms.Button();
             this.btnCapNhap3 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tbTKKhoa = new System.Windows.Forms.TextBox();
-            this.btnTK1 = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCapNhap = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -79,7 +79,6 @@
             this.dtgKhoa = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tbTKLop = new System.Windows.Forms.TextBox();
-            this.btnTK2 = new System.Windows.Forms.Button();
             this.tbNganh2 = new System.Windows.Forms.TextBox();
             this.tbSiSo2 = new System.Windows.Forms.TextBox();
             this.tbKhoaL2 = new System.Windows.Forms.TextBox();
@@ -88,7 +87,8 @@
             this.cboKhoa2 = new System.Windows.Forms.ComboBox();
             this.sINHVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSinhVien)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -102,8 +102,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.tbTKSV);
-            this.tabPage3.Controls.Add(this.btnTimKiem);
             this.tabPage3.Controls.Add(this.btnXoa3);
             this.tabPage3.Controls.Add(this.btnCapNhap3);
             this.tabPage3.Controls.Add(this.label13);
@@ -131,22 +132,32 @@
             this.tabPage3.Text = "Sinh Viên";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(296, 59);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 13);
+            this.label15.TabIndex = 42;
+            this.label15.Text = "Thông tin tìm kiếm:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(255, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "Báo Cáo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tbTKSV
             // 
-            this.tbTKSV.Location = new System.Drawing.Point(299, 52);
+            this.tbTKSV.Location = new System.Drawing.Point(398, 55);
             this.tbTKSV.Name = "tbTKSV";
             this.tbTKSV.Size = new System.Drawing.Size(121, 20);
             this.tbTKSV.TabIndex = 35;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(444, 49);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
-            this.btnTimKiem.TabIndex = 34;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.tbTKSV.TextChanged += new System.EventHandler(this.tbTKSV_TextChanged);
             // 
             // btnXoa3
             // 
@@ -160,7 +171,7 @@
             // 
             // btnCapNhap3
             // 
-            this.btnCapNhap3.Location = new System.Drawing.Point(12, 115);
+            this.btnCapNhap3.Location = new System.Drawing.Point(93, 115);
             this.btnCapNhap3.Name = "btnCapNhap3";
             this.btnCapNhap3.Size = new System.Drawing.Size(75, 23);
             this.btnCapNhap3.TabIndex = 32;
@@ -256,7 +267,7 @@
             // 
             // btnNew3
             // 
-            this.btnNew3.Location = new System.Drawing.Point(93, 115);
+            this.btnNew3.Location = new System.Drawing.Point(12, 115);
             this.btnNew3.Name = "btnNew3";
             this.btnNew3.Size = new System.Drawing.Size(75, 23);
             this.btnNew3.TabIndex = 22;
@@ -338,7 +349,7 @@
             // 
             // btnCapNhap2
             // 
-            this.btnCapNhap2.Location = new System.Drawing.Point(18, 87);
+            this.btnCapNhap2.Location = new System.Drawing.Point(99, 87);
             this.btnCapNhap2.Name = "btnCapNhap2";
             this.btnCapNhap2.Size = new System.Drawing.Size(75, 23);
             this.btnCapNhap2.TabIndex = 22;
@@ -411,7 +422,7 @@
             // 
             // btnNew2
             // 
-            this.btnNew2.Location = new System.Drawing.Point(99, 87);
+            this.btnNew2.Location = new System.Drawing.Point(18, 87);
             this.btnNew2.Name = "btnNew2";
             this.btnNew2.Size = new System.Drawing.Size(75, 23);
             this.btnNew2.TabIndex = 13;
@@ -433,9 +444,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.tbTKKhoa);
-            this.tabPage1.Controls.Add(this.btnTK1);
             this.tabPage1.Controls.Add(this.btnXoa);
             this.tabPage1.Controls.Add(this.btnCapNhap);
             this.tabPage1.Controls.Add(this.label6);
@@ -458,20 +468,12 @@
             // 
             // tbTKKhoa
             // 
-            this.tbTKKhoa.Location = new System.Drawing.Point(316, 18);
+            this.tbTKKhoa.Location = new System.Drawing.Point(397, 14);
             this.tbTKKhoa.Name = "tbTKKhoa";
             this.tbTKKhoa.PasswordChar = '*';
             this.tbTKKhoa.Size = new System.Drawing.Size(121, 20);
             this.tbTKKhoa.TabIndex = 39;
-            // 
-            // btnTK1
-            // 
-            this.btnTK1.Location = new System.Drawing.Point(443, 15);
-            this.btnTK1.Name = "btnTK1";
-            this.btnTK1.Size = new System.Drawing.Size(75, 23);
-            this.btnTK1.TabIndex = 38;
-            this.btnTK1.Text = "Tìm Kiếm";
-            this.btnTK1.UseVisualStyleBackColor = true;
+            this.tbTKKhoa.TextChanged += new System.EventHandler(this.tbTKKhoa_TextChanged);
             // 
             // btnXoa
             // 
@@ -485,7 +487,7 @@
             // 
             // btnCapNhap
             // 
-            this.btnCapNhap.Location = new System.Drawing.Point(11, 80);
+            this.btnCapNhap.Location = new System.Drawing.Point(100, 81);
             this.btnCapNhap.Name = "btnCapNhap";
             this.btnCapNhap.Size = new System.Drawing.Size(75, 23);
             this.btnCapNhap.TabIndex = 10;
@@ -533,7 +535,7 @@
             // btnSave1
             // 
             this.btnSave1.Enabled = false;
-            this.btnSave1.Location = new System.Drawing.Point(173, 81);
+            this.btnSave1.Location = new System.Drawing.Point(181, 81);
             this.btnSave1.Name = "btnSave1";
             this.btnSave1.Size = new System.Drawing.Size(75, 23);
             this.btnSave1.TabIndex = 5;
@@ -543,7 +545,7 @@
             // 
             // btnTaoMoi1
             // 
-            this.btnTaoMoi1.Location = new System.Drawing.Point(92, 81);
+            this.btnTaoMoi1.Location = new System.Drawing.Point(19, 81);
             this.btnTaoMoi1.Name = "btnTaoMoi1";
             this.btnTaoMoi1.Size = new System.Drawing.Size(75, 23);
             this.btnTaoMoi1.TabIndex = 4;
@@ -588,8 +590,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.tbTKLop);
-            this.tabPage2.Controls.Add(this.btnTK2);
             this.tabPage2.Controls.Add(this.btnXoa2);
             this.tabPage2.Controls.Add(this.btnCapNhap2);
             this.tabPage2.Controls.Add(this.tbLop2);
@@ -616,20 +618,11 @@
             // 
             // tbTKLop
             // 
-            this.tbTKLop.Location = new System.Drawing.Point(281, 7);
+            this.tbTKLop.Location = new System.Drawing.Point(397, 6);
             this.tbTKLop.Name = "tbTKLop";
-            this.tbTKLop.Size = new System.Drawing.Size(153, 20);
+            this.tbTKLop.Size = new System.Drawing.Size(118, 20);
             this.tbTKLop.TabIndex = 37;
-            // 
-            // btnTK2
-            // 
-            this.btnTK2.Location = new System.Drawing.Point(440, 6);
-            this.btnTK2.Name = "btnTK2";
-            this.btnTK2.Size = new System.Drawing.Size(75, 23);
-            this.btnTK2.TabIndex = 36;
-            this.btnTK2.Text = "Tìm Kiếm";
-            this.btnTK2.UseVisualStyleBackColor = true;
-            this.btnTK2.Click += new System.EventHandler(this.btnTK2_Click);
+            this.tbTKLop.TextChanged += new System.EventHandler(this.tbTKLop_TextChanged);
             // 
             // tbNganh2
             // 
@@ -682,15 +675,23 @@
             this.cboKhoa2.TabIndex = 0;
             this.cboKhoa2.SelectedIndexChanged += new System.EventHandler(this.CboKhoa2_SelectedIndexChanged);
             // 
-            // button1
+            // label16
             // 
-            this.button1.Location = new System.Drawing.Point(281, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Báo Cáo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(295, 10);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(96, 13);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Thông tin tìm kiếm:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(295, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(96, 13);
+            this.label17.TabIndex = 43;
+            this.label17.Text = "Thông tin tìm kiếm:";
             // 
             // Form1
             // 
@@ -700,6 +701,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -772,13 +774,13 @@
         private System.Windows.Forms.ComboBox cboKhoa2;
         private System.Windows.Forms.BindingSource sINHVIENBindingSource1;
         private System.Windows.Forms.BindingSource sINHVIENBindingSource;
-        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox tbTKSV;
         private System.Windows.Forms.TextBox tbTKLop;
-        private System.Windows.Forms.Button btnTK2;
         private System.Windows.Forms.TextBox tbTKKhoa;
-        private System.Windows.Forms.Button btnTK1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }
 

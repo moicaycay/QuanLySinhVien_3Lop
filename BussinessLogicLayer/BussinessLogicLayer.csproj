@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangNhap_BLL.cs" />
     <Compile Include="Khoa_BLL.cs" />
     <Compile Include="Lop_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

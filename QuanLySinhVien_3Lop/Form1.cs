@@ -63,10 +63,10 @@ namespace QuanLySinhVien_3Lop
                         c = c + s[i].Substring(0, 1);
                     khoabll.Khoa_Insert(c.ToUpper(), tbTenKhoa.Text.ToString(), tbSDT.Text.ToString());
                     dtgKhoa.DataSource = dtgKhoa.DataSource = khoabll.Khoa_Select();
-                    cboKhoa2.DataSource = khoabll.Khoa_Select() ;
+                    cboKhoa2.DataSource = khoabll.Khoa_Select();
                     cboKhoa2.DisplayMember = "TenKhoa";
                     cboKhoa2.ValueMember = "MaKhoa";
-                    cboKhoa3.DataSource =  khoabll.Khoa_Select() ;
+                    cboKhoa3.DataSource = khoabll.Khoa_Select();
                     cboKhoa3.DisplayMember = "TenKhoa";
                     cboKhoa3.ValueMember = "MaKhoa";
 
@@ -158,7 +158,7 @@ namespace QuanLySinhVien_3Lop
                     string tenlop = tbKhoaL2.Text.ToString() + tbLop2.Text.ToString() + " " + tbNganh2.Text.ToString();
                     lopbll.Lop_Insert(d, cboKhoa2.SelectedValue.ToString(), tenlop, tbSiSo2.Text.ToString());
                     dtgLop.DataSource = lopbll.Lop_Select(cboKhoa2.SelectedValue.ToString());
-                    
+
                 }
 
                 catch (Exception LOI)
@@ -371,26 +371,32 @@ namespace QuanLySinhVien_3Lop
                 this.Close();
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-           dtgSinhVien.DataSource = svbll.SinhVien_TimKiem(tbTKSV.Text.ToString());
-        }
-
-        private void btnTK1_Click(object sender, EventArgs e)
-        {
-           dtgKhoa.DataSource = khoabll.Khoa_TimKiem(tbTKKhoa.Text.ToString());
-        }
-
-        private void btnTK2_Click(object sender, EventArgs e)
-        {
-            dtgLop.DataSource = lopbll.Lop_TimKiem(tbTKLop.Text.ToString());
-        }
-
+      
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 dlg2 = new Form2();
             dlg2.ShowDialog();
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tbTKSV_TextChanged(object sender, EventArgs e)
+        {
+            dtgSinhVien.DataSource = svbll.SinhVien_TimKiem(tbTKSV.Text.ToString());
+        }
+
+        private void tbTKLop_TextChanged(object sender, EventArgs e)
+        {
+            dtgLop.DataSource = lopbll.Lop_TimKiem(tbTKLop.Text.ToString());
+        }
+
+        private void tbTKKhoa_TextChanged(object sender, EventArgs e)
+        {
+            dtgKhoa.DataSource = khoabll.Khoa_TimKiem(tbTKKhoa.Text.ToString());
+        }
     }
-    }
+}
 

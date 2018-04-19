@@ -32,3 +32,4 @@ F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\ShockwaveF
 F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\bin\Debug\stdole.dll
 F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\obj\Debug\QuanLySinhVien_3Lop.Form2.resources
+F:\Documents\GitHub\QuanLySinhVien_3Lop\QuanLySinhVien_3Lop\obj\Debug\QuanLySinhVien_3Lop.fmDangNhap.resources

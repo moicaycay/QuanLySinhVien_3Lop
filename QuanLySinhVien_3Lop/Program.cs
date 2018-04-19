@@ -16,7 +16,7 @@ namespace QuanLySinhVien_3Lop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new fmDangNhap());
         }
     }
 }
